@@ -97,7 +97,7 @@ export default Vue.extend({
 
       this.news = news
     },
-    displayInfo(item) {
+    displayInfo(item: any) {
       this.openModal = true
       this.display = item
     },
