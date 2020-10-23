@@ -107,7 +107,8 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .v-divider {
-  border: 1px solid #9d65c9;
+  // border: 1px solid #9d65c9;
+  border-color: #9d65c9;
 }
 .newsTitle {
   font-size: 1em;
