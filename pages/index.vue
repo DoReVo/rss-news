@@ -39,7 +39,7 @@ export default Vue.extend({
   },
   methods: {
     async fetchNews() {
-      let data
+      let data: any
       switch (this.tab) {
         case 0:
           // Fetch latest
