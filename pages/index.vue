@@ -4,12 +4,12 @@
       v-model="tab"
       :show-arrows="false"
       hide-slider
-      grow
+      fixed-tabs
       @change="fetchNews"
     >
       <v-tab>Latest</v-tab>
       <v-tab>Malaysia</v-tab>
-      <v-tab>International</v-tab>
+      <v-tab>World</v-tab>
     </v-tabs>
     <v-list three-line>
       <template v-for="(item, index) in news">
