@@ -1,12 +1,6 @@
 <template>
   <v-container>
-    <v-tabs
-      v-model="tab"
-      :show-arrows="false"
-      hide-slider
-      fixed-tabs
-      @change="fetchNews"
-    >
+    <v-tabs v-model="tab" :show-arrows="false" fixed-tabs @change="fetchNews">
       <v-tab>Latest</v-tab>
       <v-tab>Malaysia</v-tab>
       <v-tab>World</v-tab>
