@@ -1,13 +1,19 @@
 <template>
   <v-container>
-    <v-tabs v-model="tab" hide-slider grow @change="fetchNews">
+    <v-tabs
+      v-model="tab"
+      :show-arrows="false"
+      hide-slider
+      grow
+      @change="fetchNews"
+    >
       <v-tab>Latest</v-tab>
       <v-tab>Malaysia</v-tab>
       <v-tab>International</v-tab>
     </v-tabs>
     <v-list three-line>
       <template v-for="(item, index) in news">
-        <v-list-item :key="index" :href="item.link" target="_blank">
+        <v-list-item :key="index" @click.stop="displayInfo(item)">
           <v-list-item-content>
             <v-list-item-title>{{ item.title }}</v-list-item-title>
             <v-list-item-subtitle>{{ item.description }}</v-list-item-subtitle>
@@ -16,6 +22,34 @@
         <v-divider :key="`divider ${index}`"></v-divider>
       </template>
     </v-list>
+    <v-dialog v-model="openModal" max-width="500px">
+      <v-card>
+        <v-card-title>
+          <div class="newsTitle">Summary</div>
+        </v-card-title>
+        <v-card-text>
+          <v-row>
+            <v-col>
+              <div class="subtitle-2">{{ display.title }}</div>
+            </v-col>
+          </v-row>
+          <v-divider></v-divider>
+          <v-row>
+            <v-col>
+              <div class="body-1">
+                {{ display.description }}
+              </div>
+            </v-col>
+          </v-row>
+          <!-- <v-divider></v-divider> -->
+        </v-card-text>
+        <v-card-actions>
+          <v-btn block color="primary" :href="display.link" target="_blank">
+            READ FULL
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-container>
 </template>
 
@@ -35,6 +69,8 @@ export default Vue.extend({
     return {
       news: [],
       tab: 0,
+      openModal: false,
+      display: {},
     }
   },
   methods: {
@@ -61,14 +97,19 @@ export default Vue.extend({
 
       this.news = news
     },
+    displayInfo(item) {
+      this.openModal = true
+      this.display = item
+    },
   },
 })
 </script>
 
 <style lang="scss" scoped>
 .v-divider {
-  // border-color: #201548;
   border: 1px solid #9d65c9;
-  border-radius: 10px;
+}
+.newsTitle {
+  font-size: 1em;
 }
 </style>
