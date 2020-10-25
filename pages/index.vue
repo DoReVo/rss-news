@@ -5,7 +5,11 @@
       <v-tab>Malaysia</v-tab>
       <v-tab>World</v-tab>
     </v-tabs>
-    <v-list three-line>
+    <v-list
+      three-line
+      v-touch:swipe.left="goRight"
+      v-touch:swipe.right="goLeft"
+    >
       <template v-for="(item, index) in news">
         <v-list-item :key="index" @click.stop="displayInfo(item)">
           <v-list-item-content>
@@ -94,6 +98,16 @@ export default Vue.extend({
     displayInfo(item: any) {
       this.openModal = true
       this.display = item
+    },
+    async goRight() {
+      if (this.tab === 2) return
+      this.tab += 1
+      await this.fetchNews()
+    },
+    async goLeft() {
+      if (this.tab === 0) return
+      this.tab -= 1
+      await this.fetchNews()
     },
   },
 })
