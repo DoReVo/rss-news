@@ -100,4 +100,23 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {},
+  pwa: {
+    meta: {
+      mobileApp: true,
+      mobileAppIOS: true,
+      name: 'Sensasi RSS',
+      description: 'Consume news without feeling boring and overwhelming',
+      twitterCard: 'summary',
+      twitterSite: '@DoReVo',
+      twitterTitle: 'Sensasi RSS',
+      twitterDescription:
+        'Consume news without feeling boring and overwhelming',
+    },
+    manifest: {
+      name: 'Sensasi RSS',
+      short_name: 'Sensasi RSS',
+      description: 'Consume news without feeling boring and overwhelming',
+      display: 'fullscreen',
+    },
+  },
 }
