@@ -56,6 +56,7 @@ export default {
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify',
+    '@nuxtjs/google-analytics',
   ],
   /*
    ** Nuxt.js modules
@@ -118,5 +119,8 @@ export default {
       description: 'Consume news without feeling boring and overwhelming',
       display: 'standalone',
     },
+  },
+  googleAnalytics: {
+    id: process.env.GOOGLE_ANALYTICS_ID,
   },
 }
