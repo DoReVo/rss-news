@@ -29,7 +29,7 @@ export default {
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: '/icon.png',
+        content: 'https://sensasi.izzatfaris.site/icon.png',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
