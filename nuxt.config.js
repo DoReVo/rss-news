@@ -16,15 +16,20 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    titleTemplate: 'DoReVo RSS News',
-    title: 'DoReVo RSS News',
+    titleTemplate: 'Sensasi RSS',
+    title: 'Sensasi RSS',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: 'Pull news from @501Awani and display their summary',
+        content: 'Consume news without feeling boring and overwhelming',
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: '/icon.png',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
