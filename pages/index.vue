@@ -7,8 +7,7 @@
     </v-tabs>
     <v-list
       three-line
-      v-touch:swipe.left="goRight"
-      v-touch:swipe.right="goLeft"
+      v-touch="{ left: () => goRight(), right: () => goLeft() }"
     >
       <template v-for="(item, index) in news">
         <v-list-item :key="index" @click.stop="displayInfo(item)">
