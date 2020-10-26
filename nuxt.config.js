@@ -116,7 +116,7 @@ export default {
       name: 'Sensasi RSS',
       short_name: 'Sensasi RSS',
       description: 'Consume news without feeling boring and overwhelming',
-      display: 'fullscreen',
+      display: 'standalone',
     },
   },
 }
