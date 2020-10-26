@@ -56,7 +56,6 @@ export default {
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify',
-    '@nuxtjs/google-analytics',
   ],
   /*
    ** Nuxt.js modules
@@ -65,6 +64,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxtjs/gtm',
   ],
   /*
    ** Axios module configuration
@@ -120,7 +120,7 @@ export default {
       display: 'standalone',
     },
   },
-  googleAnalytics: {
-    id: process.env.GOOGLE_ANALYTICS_ID,
+  gtm: {
+    id: process.env.GOOGLE_GTM_ID,
   },
 }
