@@ -64,6 +64,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxtjs/gtm',
   ],
   /*
    ** Axios module configuration
@@ -118,5 +119,8 @@ export default {
       description: 'Consume news without feeling boring and overwhelming',
       display: 'standalone',
     },
+  },
+  gtm: {
+    id: process.env.GOOGLE_ANALYTICS_ID,
   },
 }
