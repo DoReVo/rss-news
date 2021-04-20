@@ -57,7 +57,7 @@ export default Vue.extend({
   name: 'IndexPage',
   async asyncData() {
     const { data } = await axios.get(
-      'https://api.sensasi.izzatfaris.site/latest'
+      'https://sensasi-api.izzatfaris.site/latest'
     )
     const news = data.rss.channel.item
     return { news }
@@ -76,15 +76,15 @@ export default Vue.extend({
       switch (this.tab) {
         case 0:
           // Fetch latest
-          data = await axios.get('https://api.sensasi.izzatfaris.site/latest')
+          data = await axios.get('https://sensasi-api.izzatfaris.site/latest')
           break
         case 1:
           // Fetch Malaysia
-          data = await axios.get('https://api.sensasi.izzatfaris.site/malaysia')
+          data = await axios.get('https://sensasi-api.izzatfaris.site/malaysia')
           break
         case 2:
           // Fetch International
-          data = await axios.get('https://api.sensasi.izzatfaris.site/world')
+          data = await axios.get('https://sensasi-api.izzatfaris.site/world')
           break
 
         default:
